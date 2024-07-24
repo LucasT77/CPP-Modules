@@ -26,6 +26,6 @@ class PhoneBook
 	void	search(void);
 	void	exit(void); 
 	int		_index = 0;
-}
+};
 
 #endif
