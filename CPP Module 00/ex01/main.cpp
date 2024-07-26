@@ -24,7 +24,7 @@ int main(void)
 				<< "There are three commands:\n"
 				<< "*ADD* to add a new contact (remember: there can only be 8 contacts, any more and the older ones will be erased)\n"
 				<< "*SEARCH* to search for a contact in the list\n"
-				<< "*EXIT* to exit the BEST PhoneBook in the UNIVERSE! (remember: all contacts will be erased)";
+				<< "*EXIT* to exit the BEST PhoneBook in the UNIVERSE! (remember: all contacts will be erased)\n\n";
 
 	while (input != "EXIT")
 	{
@@ -35,11 +35,11 @@ int main(void)
 		else if (input == "SEARCH")
 			PB1.search();
 		else if (input == "EXIT")
-			PB1.exit();
-		else
 		{
-			std::cout << "Wrong Command. Try ADD, SEARCH or EXIT.\n";
-			continue ;
+			std::cout << "Goodbye User!\n";
+			break ;
 		}
+		else
+			std::cout << "Wrong Command. Try ADD, SEARCH or EXIT.\n";
 	}
 }

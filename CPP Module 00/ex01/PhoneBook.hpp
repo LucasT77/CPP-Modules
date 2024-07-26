@@ -19,13 +19,15 @@ class PhoneBook
 {
 	private:
 	Contact _contact[8];
-	void	create_list(int	n_lines);
+	int		_index = 0;
 
 	public:
     void	add(void);
 	void	search(void);
 	void	exit(void); 
-	int		_index = 0;
+	void	get_list(int index);
+	std::string	get_cell(std::string str);
+	void	open_contact(int index);
 };
 
 #endif

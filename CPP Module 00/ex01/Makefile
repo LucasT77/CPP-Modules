@@ -22,7 +22,7 @@ RM				=	rm -f
 
 all:			$(NAME) 
 $(NAME):		$(OBJECT)
-						$(CC) $(CFLAGS) $(OBJECT) -o megaphone
+						$(CC) $(CFLAGS) $(OBJECT) -o phonebook
 						echo "Mandatory done"
 
 clean:
