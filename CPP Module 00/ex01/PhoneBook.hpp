@@ -22,12 +22,12 @@ class PhoneBook
 	int		_index = 0;
 
 	public:
-    void	add(void);
-	void	search(void);
-	void	exit(void); 
-	void	get_list(int index);
+    void		add(void);
+	void		search(void);
+	void		exit(void); 
+	void		get_list(int index);
+	void		open_contact(int index);
 	std::string	get_cell(std::string str);
-	void	open_contact(int index);
 };
 
 #endif

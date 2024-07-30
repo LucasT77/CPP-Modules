@@ -12,7 +12,7 @@
 
 NAME			=	phonebook
 
-SOURCE		=	main.cpp PhoneBook.cpp Contact.cpp
+SOURCE		=	main.cpp PhoneBook.cpp
 OBJECT		=	$(SOURCE:.cpp=.o)
 
 CC 				=	c++
