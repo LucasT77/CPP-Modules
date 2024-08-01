@@ -14,8 +14,6 @@
 
 void PhoneBook::add(void)
 {
-	//if (_index == 8)
-	//	_index = 0;
 	std::cout << "To save a contact please provide the following information:\n";
 	std::cout << "First name:\n";
 	std::cin >> _contact[_index % 8].firstName;
@@ -30,29 +28,25 @@ void PhoneBook::add(void)
 	_index++;
 }
 
-std::string PhoneBook::get_cell(std::string str)
+std::string PhoneBook::make_cell(std::string str)
 {
 	size_t	len;
 	std::string	new_str;
 	int		i = -1;
 	
 	len = str.length();
-	//std::cout << len;
 	if (len == 10)
 	{
-		//std::cout << "len = 10";
 		return (str);
 	}
 	else if (len > 10)
 	{
-		//std::cout << "len > 10";
 		while (++i < 9)
 			new_str += str[i];
 		new_str += '.';
 	}
 	else if (len < 10)
 	{
-		//std::cout << "len < 10";
 		while (++i < 10 - len)
 			new_str += ' ';
 		i--;
@@ -62,20 +56,20 @@ std::string PhoneBook::get_cell(std::string str)
 	return (new_str);
 }
 
-void PhoneBook::get_list(int index)
+void PhoneBook::make_list(int index)
 {
 	int	i = -1;
 	int	aux;
 	std::string index_output;
 
-	std::cout << '\n' << '|' << get_cell("index") << '|' << get_cell("First Name") << '|' 
-				<< get_cell("Last Name") << '|' << get_cell("Nickname") << '|' << '\n';
+	std::cout << '\n' << '|' << make_cell("index") << '|' << make_cell("First Name") << '|' 
+				<< make_cell("Last Name") << '|' << make_cell("Nickname") << '|' << '\n';
 	while (++i < index)
 	{
 		aux = i + 1;
 		index_output = aux + '0';
-		std::cout << '|' << get_cell(index_output) << '|' << get_cell(_contact[i].firstName) << '|' 
-					<< get_cell(_contact[i].lastName) << '|' << get_cell(_contact[i].nickname) << '|' << '\n';
+		std::cout << '|' << make_cell(index_output) << '|' << make_cell(_contact[i].firstName) << '|' 
+					<< make_cell(_contact[i].lastName) << '|' << make_cell(_contact[i].nickname) << '|' << '\n';
 	}
 	std::cout << '\n';
 }
@@ -98,20 +92,21 @@ void PhoneBook::search(void)
 	index = _index;
 	if (index > 8)
 		index = 8;
-	get_list(index);
+	make_list(index);
 	std::cout << "Insert the index of the desired contact information:\n";
-	std::cin >> index_input;
-	while ((index_input < 1 || index_input > index) && tries < 3)
+	while (tries < 3)
 	{
-		std::cout << "Index out of range. Try again\n";
-		std::cin >> index_input;
+		if ((std::cin >> index_input) && (index_input > 0 && index_input <= index)) break ;
+		std::cout << "Index out of range. ";
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		tries++;
+		if (tries < 3) std::cout << "Try again:\n";
 	}
-	if ((index_input < 1 || index_input > index + 1) && tries == 3)
+	if ((index_input < 1 || index_input > index + 1) && tries > 2)
 	{
-		std::cout << "Limit of attempts reached. Returning to main menu...\n" << "...\n" << "...\n";
+		std::cout << "\nLimit of attempts reached. Returning to main menu...\n" << "...\n" << "...\n";
 		return ;
 	}
-	if (index_input >= 1 || index_input <= index + 1)
-		open_contact(index_input - 1);
+	open_contact(index_input - 1);
 }

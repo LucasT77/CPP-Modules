@@ -30,11 +30,11 @@ int main(void)
 	{
 		std::cout << "Please enter you command:\n";
 		std::cin >> input;
-		if (input == "ADD")
+		if (input == "ADD" || input == "add" || input == "A" || input == "a" )
 			PB1.add();
-		else if (input == "SEARCH")
+		else if (input == "SEARCH" || input == "search" || input == "S" || input == "s")
 			PB1.search();
-		else if (input == "EXIT")
+		else if (input == "EXIT" || input == "exit")
 		{
 			std::cout << "Goodbye User!\n";
 			break ;

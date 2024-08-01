@@ -14,20 +14,20 @@
 #define PHONEBOOK_HPP
 
 #include "Contact.hpp"
+#include <limits>
 
 class PhoneBook
 {
 	private:
-	Contact _contact[8];
-	int		_index = 0;
+	Contact 	_contact[8];
+	int			_index = 0;
+	void		make_list(int index);
+	void		open_contact(int index);
+	std::string	make_cell(std::string str);
 
 	public:
     void		add(void);
 	void		search(void);
-	void		exit(void); 
-	void		get_list(int index);
-	void		open_contact(int index);
-	std::string	get_cell(std::string str);
 };
 
 #endif
