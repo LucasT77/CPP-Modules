@@ -26,16 +26,16 @@ class Contact
 	std::string darkestSecret;
 
 	public:
-	void	setFirstName(std::string fn);
-	void	setLastName(std::string ln);
-	void	setNickname(std::string nn);
-	void	setPhoneNumber(std::string pn);
-	void	setDarkestSecret(std::string ds);
-	void	getFirstName(std::string fn);
-	void	getLastName(std::string ln);
-	void	getNickname(std::string nn);
-	void	getPhoneNumber(std::string pn);
-	void	getDarkestSecret(std::string ds);
+	void		setFirstName(std::string fn);
+	void		setLastName(std::string ln);
+	void		setNickname(std::string nn);
+	void		setPhoneNumber(std::string pn);
+	void		setDarkestSecret(std::string ds);
+	std::string	getFirstName();
+	std::string	getLastName();
+	std::string	getNickname();
+	std::string	getPhoneNumber();
+	std::string	getDarkestSecret();
 };
 
 #endif

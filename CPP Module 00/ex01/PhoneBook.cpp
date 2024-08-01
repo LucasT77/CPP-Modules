@@ -14,17 +14,24 @@
 
 void PhoneBook::add(void)
 {
+	std::string str;
+
 	std::cout << "To save a contact please provide the following information:\n";
 	std::cout << "First name:\n";
-	std::cin >> _contact[_index % 8].firstName;
+	std::cin >> str;
+	_contact[_index % 8].setFirstName(str);
 	std::cout << "Last name:\n";
-	std::cin >> _contact[_index % 8].lastName;
+	std::cin >> str;
+	_contact[_index % 8].setLastName(str);
 	std::cout << "Nickname:\n";
-	std::cin >> _contact[_index % 8].nickname;
+	std::cin >> str;
+	_contact[_index % 8].setNickname(str);
 	std::cout << "Phone number:\n";
-	std::cin >> _contact[_index % 8].phoneNumber;
+	std::cin >> str;
+	_contact[_index % 8].setPhoneNumber(str);
 	std::cout << "Darkest secret:\n";
-	std::cin >> _contact[_index % 8].darkestSecret;
+	std::cin >> str;
+	_contact[_index % 8].setDarkestSecret(str);
 	_index++;
 }
 
@@ -68,19 +75,19 @@ void PhoneBook::make_list(int index)
 	{
 		aux = i + 1;
 		index_output = aux + '0';
-		std::cout << '|' << make_cell(index_output) << '|' << make_cell(_contact[i].firstName) << '|' 
-					<< make_cell(_contact[i].lastName) << '|' << make_cell(_contact[i].nickname) << '|' << '\n';
+		std::cout << '|' << make_cell(index_output) << '|' << make_cell(_contact[i].getFirstName()) << '|' 
+					<< make_cell(_contact[i].getLastName()) << '|' << make_cell(_contact[i].getNickname()) << '|' << '\n';
 	}
 	std::cout << '\n';
 }
 
 void PhoneBook::open_contact(int index)
 {
-	std::cout << "First name: " << _contact[index].firstName << "\n";
-	std::cout << "Last name: " << _contact[index].lastName << "\n";
-	std::cout << "Nickname: " << _contact[index].nickname << "\n";
-	std::cout << "Phone number: " << _contact[index].phoneNumber << "\n";
-	std::cout << "Darkest secret: " << _contact[index].darkestSecret << "\n";
+	std::cout << "First name: " << _contact[index].getFirstName() << "\n";
+	std::cout << "Last name: " << _contact[index].getLastName() << "\n";
+	std::cout << "Nickname: " << _contact[index].getNickname() << "\n";
+	std::cout << "Phone number: " << _contact[index].getPhoneNumber() << "\n";
+	std::cout << "Darkest secret: " << _contact[index].getDarkestSecret() << "\n";
 }
 
 void PhoneBook::search(void)
