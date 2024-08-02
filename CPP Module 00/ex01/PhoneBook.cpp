@@ -110,7 +110,7 @@ void PhoneBook::search(void)
 		tries++;
 		if (tries < 3) std::cout << "Try again:\n";
 	}
-	if ((index_input < 1 || index_input > index + 1) && tries > 2)
+	if ((index_input < 1 || index_input > index) && tries > 2)
 	{
 		std::cout << "\nLimit of attempts reached. Returning to main menu...\n" << "...\n" << "...\n";
 		return ;

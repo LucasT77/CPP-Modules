@@ -12,29 +12,9 @@
 
 #include <iostream>
 #include <string>
-using namespace std;
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-char	low_to_high_case(char chr)
-{
-	if (chr >= 97 && chr <= 122)
-		return (chr - 32);
-	else
-		return (chr);
-}
 
 int main(int argc, char **argv)
 {
-	char	chr;
 	int		j;
 
 	if (argc < 1)
@@ -48,10 +28,7 @@ int main(int argc, char **argv)
 	{
 		j = -1;
 		while (argv[i][++j])
-		{
-			chr = low_to_high_case(argv[i][j]);
-			std::cout << chr;
-		}
+			std::cout << (char)std::toupper(argv[i][j]);
 	}
 	std::cout << '\n';
 	return (0);
