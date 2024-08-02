@@ -14,27 +14,27 @@
 
 void Contact::setFirstName(std::string fn)
 {
-    firstName += fn;
+    firstName = fn;
 }
 
 void Contact::setLastName(std::string ln)
 {
-    lastName += ln;
+    lastName = ln;
 }
 
 void Contact::setNickname(std::string nn)
 {
-    nickname += nn;
+    nickname = nn;
 }
 
 void Contact::setPhoneNumber(std::string pn)
 {
-    phoneNumber += pn;
+    phoneNumber = pn;
 }
 
 void Contact::setDarkestSecret(std::string ds)
 {
-    darkestSecret += ds;
+    darkestSecret = ds;
 }
 
 std::string Contact::getFirstName()
