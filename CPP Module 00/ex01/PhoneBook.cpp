@@ -106,7 +106,7 @@ void PhoneBook::search(void)
 		if ((std::cin >> index_input) && (index_input > 0 && index_input <= index)) break ;
 		std::cout << "Index out of range. ";
 		std::cin.clear();
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cin.ignore(8, '\n');
 		tries++;
 		if (tries < 3) std::cout << "Try again:\n";
 	}

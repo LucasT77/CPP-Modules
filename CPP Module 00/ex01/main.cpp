@@ -10,15 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "PhoneBook.hpp"
-
-using namespace std;
 
 int main(void)
 {
 	PhoneBook PB1;
-	std:string input;
+	std::string input;
 
 	std::cout	<< "Welcome to the most AWESOME ***PhoneBook*** in the GALAXY!!!\n"
 				<< "There are three commands:\n"
