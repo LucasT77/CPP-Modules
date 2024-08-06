@@ -19,12 +19,12 @@ const std::string	Weapon::getType(void)
 
 void	Weapon::setType(std::string newType)
 {
-	_type += newType;
+	_type = newType;
 }
 
 Weapon::Weapon(std::string type)
 {
-
+	setType(type);
 }
 
 Weapon::~Weapon(void)

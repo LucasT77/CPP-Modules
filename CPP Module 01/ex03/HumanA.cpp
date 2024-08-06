@@ -17,9 +17,17 @@ void    HumanA::attack(void)
     std::cout << _name << " attacks with their " << _weapon.getType() << '\n';
 }
 
-HumanA(std::string name, Weapon &weapon)
-
-~HumanA(void)
+HumanA::HumanA(std::string name, Weapon &weapon): _name(name), _weapon(weapon)
 {
 
+}
+
+HumanA::~HumanA(void)
+{
+
+}
+
+void	HumanA::setWeapon(Weapon weapon)
+{
+    _weapon = weapon;
 }

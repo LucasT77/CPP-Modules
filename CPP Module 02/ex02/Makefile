@@ -10,9 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	notSed
+NAME			=	fixed
 
-SOURCE		=	main.cpp
+SOURCE		=	main.cpp Fixed.cpp
 OBJECT		=	$(SOURCE:.cpp=.o)
 
 CC 				=	c++
@@ -22,7 +22,7 @@ RM				=	rm -f
 
 all:			$(NAME) 
 $(NAME):		$(OBJECT)
-						$(CC) $(CFLAGS) $(OBJECT) -o notSed
+						$(CC) $(CFLAGS) $(OBJECT) -o fixed
 						echo "Mandatory done"
 
 clean:
