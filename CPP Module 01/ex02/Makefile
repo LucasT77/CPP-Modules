@@ -15,14 +15,14 @@ NAME			=	thisBrain
 SOURCE		=	main.cpp
 OBJECT		=	$(SOURCE:.cpp=.o)
 
-CC 				=	c++
-CFLAGS			=	-std=c++98 -Wall -Werror -Wextra
+CXX 				=	c++
+CXXFLAGS			=	-std=c++98 -Wall -Werror -Wextra
 RM				=	rm -f
 
 
 all:			$(NAME) 
 $(NAME):		$(OBJECT)
-						$(CC) $(CFLAGS) $(OBJECT) -o thisBrain
+						$(CXX) $(CXXFLAGS) $(OBJECT) -o thisBrain
 						echo "Mandatory done"
 
 clean:

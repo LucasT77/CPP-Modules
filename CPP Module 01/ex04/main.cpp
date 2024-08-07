@@ -60,12 +60,11 @@ int	main(int argc, char **argv)
 		std::cout << "Invalid number of arguments. Try with 1 filename and 2 strings\n";
 		return (0);
 	}
-	filename = argv[1];
     s1 = argv[2];
 	s2 = argv[3];
-	original.open(filename);
+	original.open(argv[1]);
 	filename = change_filename(argv[1]);
-	new_file.open(filename);
+	new_file.open(filename.c_str());
 	if (original.is_open() == false)
 	{
 		std::cout << "Invalid filename. Try again.\n";
