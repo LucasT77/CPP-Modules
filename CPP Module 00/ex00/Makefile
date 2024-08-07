@@ -15,14 +15,14 @@ NAME			=	megaphone
 SOURCE		=	megaphone.cpp
 OBJECT		=	$(SOURCE:.cpp=.o)
 
-CC 				=	c++
-CFLAGS			=	-std=c++98 -Wall -Werror -Wextra
+CXX 				=	c++
+CXXFLAGS			=	-std=c++98 -Wall -Werror -Wextra
 RM				=	rm -f
 
 
 all:			$(NAME) 
 $(NAME):		$(OBJECT)
-						$(CC) $(CFLAGS) $(OBJECT) -o megaphone
+						$(CXX) $(CXXFLAGS) $(OBJECT) -o megaphone
 						echo "Mandatory done"
 
 clean:

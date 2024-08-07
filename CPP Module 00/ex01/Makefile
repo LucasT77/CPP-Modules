@@ -15,14 +15,14 @@ NAME			=	phonebook
 SOURCE		=	main.cpp PhoneBook.cpp Contact.cpp
 OBJECT		=	$(SOURCE:.cpp=.o)
 
-CC 				=	c++
-CFLAGS			=	-std=c++98 -Wall -Werror -Wextra
+CXX 				=	c++
+CXXFLAGS			=	-std=c++98 -Wall -Werror -Wextra
 RM				=	rm -f
 
 
 all:			$(NAME) 
 $(NAME):		$(OBJECT)
-						$(CC) $(CFLAGS) $(OBJECT) -o phonebook
+						$(CXX) $(CXXFLAGS) $(OBJECT) -o phonebook
 						echo "Mandatory done"
 
 clean:

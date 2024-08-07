@@ -12,6 +12,13 @@
 
 #include "PhoneBook.hpp"
 
+PhoneBook::PhoneBook()
+{
+	_index = 0;
+}
+
+PhoneBook::~PhoneBook() {}
+
 void PhoneBook::add(void)
 {
 	std::string str;
@@ -39,7 +46,7 @@ std::string PhoneBook::make_cell(std::string str)
 {
 	size_t	len;
 	std::string	new_str;
-	int		i = -1;
+	size_t		i = -1;
 	
 	len = str.length();
 	if (len == 10)
