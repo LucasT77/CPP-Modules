@@ -22,7 +22,7 @@ Fixed::Fixed(Fixed &fixed_copy)
 
 }
 
-Fixed	Fixed::operator+(const Fixed &fixed_copy)
+Fixed	Fixed::operator=(const Fixed &fixed_copy)
 {
 
 }
