@@ -23,7 +23,7 @@ int main(void)
 				<< "*SEARCH* to search for a contact in the list\n"
 				<< "*EXIT* to exit the BEST PhoneBook in the UNIVERSE! (remember: all contacts will be erased)\n\n";
 
-	while (input != "EXIT")
+	while (input != "EXIT" && !std::cin.eof())
 	{
 		std::cout << "Please enter you command:\n";
 		std::cin >> input;
