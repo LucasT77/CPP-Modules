@@ -24,7 +24,13 @@ ClapTrap::~ClapTrap() {}
 
 void    ClapTrap::attack(const std::string& target)
 {
-
+    if (energy_points == 0)
+    {
+        std::cout << "ClapTrap has no energy left. Attack canceled" << std::endl;
+        return ;
+    }
+    energy_points--;
+    
 }
 void    ClapTrap::takeDamage(unsigned int amount)
 {
