@@ -10,56 +10,58 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void)
 {
-	ClapTrap LukeSkywalker("Luke Skywalker");
-	ClapTrap DarthVader("Darth Vader");
+	FragTrap LukeSkywalker("Luke Skywalker");
+	FragTrap DarthVader("Darth Vader");
 
 	LukeSkywalker.attack("Darth Vader");
-	DarthVader.takeDamage(1);
+	DarthVader.takeDamage(20);
 	std::cout << std::endl;
 	LukeSkywalker.attack("Darth Vader");
-	DarthVader.takeDamage(2);
+	DarthVader.takeDamage(20);
 	std::cout << std::endl;
 	DarthVader.attack("Luke Skywalker");
-	LukeSkywalker.takeDamage(5);
+	LukeSkywalker.takeDamage(20);
 	std::cout << std::endl;
-	LukeSkywalker.beRepaired(3);
+	LukeSkywalker.beRepaired(20);
 	std::cout << std::endl;
 	LukeSkywalker.attack("Darth Vader");
-	DarthVader.takeDamage(3);
+	DarthVader.takeDamage(20);
 	std::cout << std::endl;
-	DarthVader.beRepaired(2);
+	DarthVader.beRepaired(20);
 	std::cout << std::endl;
 	DarthVader.attack("Luke Skywalker");
-	LukeSkywalker.takeDamage(1);
+	LukeSkywalker.takeDamage(20);
 	std::cout << std::endl;
 	LukeSkywalker.attack("Darth Vader");
-	DarthVader.takeDamage(4);
+	DarthVader.takeDamage(20);
 	std::cout << std::endl;
 	DarthVader.attack("Luke Skywalker");
-	LukeSkywalker.takeDamage(5);
+	LukeSkywalker.takeDamage(20);
 	std::cout << std::endl;
-	LukeSkywalker.beRepaired(1);
-	DarthVader.beRepaired(1);
-	LukeSkywalker.beRepaired(1);
-	DarthVader.beRepaired(1);
-	LukeSkywalker.beRepaired(1);
-	DarthVader.beRepaired(1);
-	LukeSkywalker.beRepaired(1);
-	DarthVader.beRepaired(1);
-	std::cout << std::endl;
-	LukeSkywalker.attack("Darth Vader");
-	DarthVader.attack("Luke Skywalker");
-	DarthVader.takeDamage(5);
-	LukeSkywalker.takeDamage(2);
+	LukeSkywalker.beRepaired(20);
+	DarthVader.beRepaired(20);
+	LukeSkywalker.beRepaired(20);
+	DarthVader.beRepaired(20);
+	LukeSkywalker.beRepaired(20);
+	DarthVader.beRepaired(20);
+	LukeSkywalker.beRepaired(20);
+	DarthVader.beRepaired(20);
 	std::cout << std::endl;
 	LukeSkywalker.attack("Darth Vader");
 	DarthVader.attack("Luke Skywalker");
-	LukeSkywalker.takeDamage(2);
+	DarthVader.takeDamage(20);
+	LukeSkywalker.takeDamage(20);
+	std::cout << std::endl;
+	LukeSkywalker.attack("Darth Vader");
+	DarthVader.attack("Luke Skywalker");
+	LukeSkywalker.takeDamage(20);
 	std::cout << std::endl;
 	DarthVader.attack("Luke Skywalker");
-	std::cout << std::endl; 
+	std::cout << std::endl;
+	LukeSkywalker.highFivesGuys();
+	DarthVader.highFivesGuys();
 }
