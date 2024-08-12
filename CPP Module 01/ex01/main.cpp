@@ -21,7 +21,10 @@ int	main()
 	int	i = -1;
 
 	z = zombieHorde(N, "Zomboa");
+	if (!z)
+		return -1;
     while (++i < N)
 		z[i].announce();
 	delete [] (z);
+	return 0;
 }

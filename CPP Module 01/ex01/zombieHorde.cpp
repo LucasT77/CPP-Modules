@@ -14,9 +14,15 @@
 
 Zombie	*zombieHorde(int N, std::string name)
 {
-	Zombie	*z = new Zombie[N];
+	Zombie	*z;
 	int 	i = -1;
 
+	if (N < 0)
+	{
+		std::cout << "Invalid number of Zombies." << std::endl;
+		return (NULL);
+	}
+	z = new Zombie[N];
 	while (++i < N)
 		z[i].setName(name);
 	return (z);
