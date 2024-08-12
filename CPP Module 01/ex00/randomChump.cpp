@@ -17,3 +17,4 @@ void		randomChump(std::string name)
     Zombie z2 = Zombie(name);
     z2.announce();
 }
+//stack allocation

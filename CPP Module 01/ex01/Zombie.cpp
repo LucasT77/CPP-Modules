@@ -19,7 +19,7 @@ void Zombie::announce(void)
 
 Zombie::Zombie(std::string name)
 {
-    _name += name;
+    _name = name;
 }
 
 Zombie::Zombie(void)
@@ -34,5 +34,5 @@ Zombie::~Zombie(void)
 
 void    Zombie::setName(std::string name)
 {
-    _name += name;
+    _name = name;
 }

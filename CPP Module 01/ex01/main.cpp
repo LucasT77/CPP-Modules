@@ -20,7 +20,7 @@ int	main()
 	int N = 5;
 	int	i = -1;
 
-	z = zombieHorde(5, "Zomboa");
+	z = zombieHorde(N, "Zomboa");
     while (++i < N)
 		z[i].announce();
 	delete [] (z);
