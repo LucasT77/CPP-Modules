@@ -105,6 +105,8 @@ bool	Fixed::operator!=(const Fixed &copy) const
 {
 	return this->_rawBits != copy._rawBits;
 }
+
+
 Fixed	Fixed::operator+(const Fixed &copy) const
 {
 	Fixed result;
