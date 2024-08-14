@@ -22,7 +22,7 @@ class Cat : public Animal
 		Cat(Cat &original);
 		Cat &operator=(const Cat &original);
 		~Cat();
-		void makeSound();
+		void makeSound() const;
 };
 
 # endif
