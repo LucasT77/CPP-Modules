@@ -28,7 +28,7 @@ Brain &Brain::operator=(const Brain &original)
 {
     for (int i = 0; i < 100; i++)
         this->ideas[i] = original.ideas[i];
-    std::cout << " Brain copy assignment constructor called" << std::endl;
+    std::cout << "Brain copy assignment constructor called" << std::endl;
     return (*this);
 }
 

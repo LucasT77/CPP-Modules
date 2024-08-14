@@ -42,7 +42,7 @@ int main()
 	delete c;
 	delete wc;
 	delete meta2;
-
+	
 	std::cout << "\n\n/////////////////////////EX01/////////////////////////\n" << std::endl;
 
 	int size = 6;
@@ -65,6 +65,15 @@ int main()
 		std::cout << '\n';
 	}
 	delete [] animals;
+
+	std::cout << "------------------" << std::endl;
+
+	Dog basic;
+	std::cout << "--------!!----------" << std::endl;
+	{
+		Dog tmp = basic;
+	}
+	std::cout << "--------**----------" << std::endl;
 
 	return 0;
 }
