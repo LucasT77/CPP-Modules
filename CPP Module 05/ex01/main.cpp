@@ -14,6 +14,8 @@
 
 int main()
 {
+	std::cout << "\n\n/////////////////////////EX00/////////////////////////\n" << std::endl;
+	
 	Bureaucrat b1;
 	Bureaucrat b2("Steve", 1);
 	Bureaucrat b3(b2);
@@ -64,6 +66,47 @@ int main()
 	}
 
 	//std::cout << b5 << std::endl;
+
+
+
+	std::cout << "\n\n/////////////////////////EX01/////////////////////////\n" << std::endl;
+
+	Form f1("Blank", 80, 50);
+	Bureaucrat b6("John", 90);
+	Bureaucrat b7("Peter", 30);
+
+	std::cout << std::endl;
+
+	try
+	{
+		f1.beSigned(b6);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+	std::cout << f1;
+	
+	try
+	{
+		f1.beSigned(b7);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+	std::cout << f1;
+
+	std::cout << std::endl;
+
+	b6.signForm(f1);
+	b7.signForm(f1);
+
+	std::cout << std::endl;
+
+
 	
 	
 }

@@ -14,9 +14,12 @@
 # define BUREAUCRAT_HPP
 
 #include <iostream>
+#include "AForm.hpp"
 
 #define HiGHESTGRADE 1
 #define LOWESTGRADE 150
+
+class Form;
 
 class Bureaucrat
 {
@@ -31,6 +34,7 @@ class Bureaucrat
 		Bureaucrat &operator=(const Bureaucrat &other);
 		~Bureaucrat();
 
+        void		setName(std::string name);
         void		setGrade(int grade);
         std::string	getName(void) const;
         int			getGrade(void) const;
@@ -48,6 +52,9 @@ class Bureaucrat
             public:
                 virtual const char* what() const throw();
         };
+
+        //Additional function
+        void signForm(Form &form);
 };
 
 std::ostream &operator<<(std::ostream &COUT, Bureaucrat const &bureaucrat);

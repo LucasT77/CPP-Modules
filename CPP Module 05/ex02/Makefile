@@ -12,8 +12,8 @@
 
 NAME			=	Bureaucracy
 
-SOURCE			=	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp \
-					RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SOURCE			=	src/main.cpp src/Bureaucrat.cpp src/AForm.cpp src/ShrubberyCreationForm.cpp \
+					src/RobotomyRequestForm.cpp src/PresidentialPardonForm.cpp
 
 OBJECT			=	$(SOURCE:.cpp=.o)
 
