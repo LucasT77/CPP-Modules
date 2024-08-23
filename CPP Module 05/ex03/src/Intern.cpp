@@ -21,6 +21,8 @@ Form *Intern::makeForm(std::string formName, std::string target)
 {
 	std::string	upper_name;
 	std::string	formTypes[3] = {"SHRUBBERY", "ROBOTOMY", "PRESIDENTIAL"};
+	Form *forms[3] = {new ShrubberyCreationForm, new RobotomyRequestForm, new PresidentialPardonForm};
+	Form *final;
 	int			i = -1;
 	std::size_t	found;
 
@@ -31,13 +33,14 @@ Form *Intern::makeForm(std::string formName, std::string target)
 	{
 		found = upper_name.find(formTypes[i]);
 		if (found != std::string::npos)
-			break;
+		{
+			final = forms[i];
+			final.setTarget(target);
+			delete [] forms;
+			return (final);
+		}
 	}
-	if (i > 2)
-	{
-		std::cout << "Form not found\n";
-		return NULL;
-	}
-	
-	
+	delete [] forms;
+	std::cout << "Form not found\n";
+	return NULL;
 }
