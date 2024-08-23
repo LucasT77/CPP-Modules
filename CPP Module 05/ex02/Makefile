@@ -12,7 +12,7 @@
 
 NAME			=	Bureaucracy
 
-SOURCE			=	src/main.cpp src/Bureaucrat.cpp src/AForm.cpp src/ShrubberyCreationForm.cpp \
+SOURCE			=	main.cpp src/Bureaucrat.cpp src/AForm.cpp src/ShrubberyCreationForm.cpp \
 					src/RobotomyRequestForm.cpp src/PresidentialPardonForm.cpp
 
 OBJECT			=	$(SOURCE:.cpp=.o)
@@ -33,6 +33,7 @@ clean:
 
 fclean:			clean
 						$(RM) $(NAME)
+						$(RM) *_shrubbery
 						echo "Fully cleaned"
 
 re:				fclean all
