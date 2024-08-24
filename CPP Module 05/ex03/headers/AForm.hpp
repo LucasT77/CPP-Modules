@@ -61,6 +61,9 @@ class AForm
 		void execute(Bureaucrat const & executor) const;
 		virtual void execution() const = 0;
 
+		//void				setTargetInDerivative(std::string target);
+		virtual void		setTarget(std::string target) = 0;
+
 };
 
 std::ostream &operator<<(std::ostream &COUT, AForm const &Aform);

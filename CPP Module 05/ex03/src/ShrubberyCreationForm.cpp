@@ -69,3 +69,14 @@ void ShrubberyCreationForm::execution() const
 				<<	"       .:@:'.\n"
 				<<	"     .::(@:.\n          -Sam Blumenstein-";
 }
+
+
+std::string ShrubberyCreationForm::getTarget()
+{
+	return (Target);
+}
+
+void		ShrubberyCreationForm::setTarget(std::string target)
+{
+	Target = target;
+}

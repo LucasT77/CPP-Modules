@@ -53,3 +53,13 @@ void RobotomyRequestForm::execution() const
 	else
 		std::cout << "The robotomy has failed.\n";
 }
+
+std::string RobotomyRequestForm::getTarget()
+{
+	return (Target);
+}
+
+void		RobotomyRequestForm::setTarget(std::string target)
+{
+	Target = target;
+}

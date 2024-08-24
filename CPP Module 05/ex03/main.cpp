@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "headers/Bureaucrat.hpp"
+#include "headers/Intern.hpp"
 
 int main()
 {
@@ -152,7 +153,23 @@ int main()
 
 	std::cout << "\n\n/////////////////////////EX03/////////////////////////\n" << std::endl;
 
+	Intern mike;
+	AForm *p;
+	Bureaucrat b9("Carl", 4);
 
+	p = mike.makeForm("presidecial", "Gold King");
+
+	std::cout << std::endl;
+
+	b9.signForm(*p);
+	b9.signForm(*p);
+	b9.signForm(*p);
+
+	b9.executeForm(*p);
+	b9.executeForm(*p);
+	b9.executeForm(*p);
+	
+	std::cout << std::endl;
 }
 
 

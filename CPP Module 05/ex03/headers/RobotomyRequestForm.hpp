@@ -30,6 +30,8 @@ class RobotomyRequestForm : public AForm
 		~RobotomyRequestForm();
 
 		void execution() const;
+		std::string getTarget();
+		void		setTarget(std::string target);
 };
 
 # endif

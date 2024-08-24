@@ -28,6 +28,8 @@ class PresidentialPardonForm : public AForm
 		~PresidentialPardonForm();
 
 		void execution() const;
+		std::string getTarget();
+		void		setTarget(std::string target);
 };
 
 # endif

@@ -29,6 +29,8 @@ class ShrubberyCreationForm : public AForm
 		~ShrubberyCreationForm();
 
 		void execution() const;
+		std::string getTarget();
+		void		setTarget(std::string target);
 };
 
 # endif

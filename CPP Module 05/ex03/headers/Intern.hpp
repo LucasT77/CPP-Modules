@@ -13,20 +13,23 @@
 #ifndef INTERN_HPP
 # define INTERN_HPP
 
-#include "Form.hpp"
+#include "AForm.hpp"
 #include <string>
 
-class Form;
+class AForm;
+class ShubberyCreationForm;
+class RobotomyRequestForm;
+class PresidentialPardonForm;
 
 class Intern
 {  
 	public:
-		Intern();
-		Intern(Intern &other);
-		Intern &operator=(const Intern &other);
-		~Intern();
+		// Intern();
+		// Intern(Intern &other);
+		// Intern &operator=(const Intern &other);
+		// ~Intern();
 
-		Form *makeForm(std::string formName, std::string target);
+		AForm *makeForm(std::string formName, std::string target);
 };
 
 #endif

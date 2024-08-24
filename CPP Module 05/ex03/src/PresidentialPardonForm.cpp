@@ -45,3 +45,13 @@ void PresidentialPardonForm::execution() const
 {
 	std::cout << "The target " << Target << " has been pardoned by Zaphold Beeblebrox\n";
 }
+
+std::string PresidentialPardonForm::getTarget()
+{
+	return (Target);
+}
+
+void		PresidentialPardonForm::setTarget(std::string target)
+{
+	Target = target;
+}
