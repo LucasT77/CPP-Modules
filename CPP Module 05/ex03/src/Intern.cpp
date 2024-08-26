@@ -12,20 +12,23 @@
 
 #include "../headers/Intern.hpp"
 
-// Intern::Intern() {}
-// Intern::Intern(Intern &other) {}
-// Intern &Intern::operator=(const Intern &other) {}
-// Intern::~Intern() {}
+Intern::Intern() {}
+Intern::Intern(Intern &other) {(void)other;}
+Intern &Intern::operator=(const Intern &other) 
+{
+	(void)other;
+	return *this;
+}
+Intern::~Intern() {}
 
 AForm *Intern::makeForm(std::string formName, std::string target)
 {
 	std::string	upper_name;
 	std::string	formTypes[3] = {"SHRUBBERY", "ROBOTOMY", "PRESIDENTIAL"};
-	//AForm *forms[3] = {new ShrubberyCreationForm, new RobotomyRequestForm, new PresidentialPardonForm};
-	AForm **forms = new AForm*[3];
-	forms[0] = new ShrubberyCreationForm;
-	forms[1] = new RobotomyRequestForm;
-	forms[2] = new PresidentialPardonForm;
+	AForm *forms[3];
+	forms[0] = new ShrubberyCreationForm(target);
+	forms[1] = new RobotomyRequestForm(target);
+	forms[2] = new PresidentialPardonForm(target);
 	AForm *final;
 	int			i = -1;
 	std::size_t	found;
@@ -39,14 +42,8 @@ AForm *Intern::makeForm(std::string formName, std::string target)
 		if (found != std::string::npos)
 		{
 			final = forms[i];
-			final->setTarget(target);
-			delete [] forms;
 			return (final);
 		}
 	}
-	delete [] forms;
-	std::cout << "Form not found\n";
 	return NULL;
 }
-
-//AForm **aforms = new AForm*[3];

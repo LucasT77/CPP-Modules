@@ -63,6 +63,7 @@ class AForm
 
 		//void				setTargetInDerivative(std::string target);
 		virtual void		setTarget(std::string target) = 0;
+		virtual std::string getTarget();
 
 };
 

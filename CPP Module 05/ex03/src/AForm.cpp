@@ -123,6 +123,11 @@ void AForm::execute(Bureaucrat const & executor) const
 		this->execution();
 }
 
+std::string AForm::getTarget()
+{
+	return 0;
+}
+
 // void		AForm::setTargetInDerivative(std::string target)
 // {
 // 	this->setTarget(target);

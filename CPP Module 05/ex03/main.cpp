@@ -157,16 +157,16 @@ int main()
 	AForm *p;
 	Bureaucrat b9("Carl", 4);
 
-	p = mike.makeForm("presidecial", "Gold King");
+	p = mike.makeForm("presidential", "Gold King");
+	if (!p)
+	{
+		std::cout << "Error: the form does not exist\n";
+		return 0;
+	}
 
 	std::cout << std::endl;
 
 	b9.signForm(*p);
-	b9.signForm(*p);
-	b9.signForm(*p);
-
-	b9.executeForm(*p);
-	b9.executeForm(*p);
 	b9.executeForm(*p);
 	
 	std::cout << std::endl;
