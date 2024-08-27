@@ -10,9 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	scalar_converter
+NAME			=	convert
 
-SOURCE			=	main.cpp
+SOURCE			=	main.cpp ScalarConverter.cpp
 OBJECT			=	$(SOURCE:.cpp=.o)
 
 CXX 			=	c++
