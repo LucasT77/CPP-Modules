@@ -1,0 +1,3 @@
+ex00: use static_cast
+ex01: use reinterpret_cast
+ex02: use dynamic_cast
