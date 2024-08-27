@@ -111,44 +111,44 @@ int main()
 
 	std::cout << "\n\n/////////////////////////EX02/////////////////////////\n" << std::endl;
 
-	Bureaucrat b6("John", 90);
-	Bureaucrat b7("Peter", 30);
-	Bureaucrat b8("Susan", 3);
-	ShrubberyCreationForm	shrub;
-	RobotomyRequestForm		robot("Alex Murphy");
-	PresidentialPardonForm	pardon;
+	// Bureaucrat b6("John", 90);
+	// Bureaucrat b7("Peter", 30);
+	// Bureaucrat b8("Susan", 3);
+	// ShrubberyCreationForm	shrub;
+	// RobotomyRequestForm		robot("Alex Murphy");
+	// PresidentialPardonForm	pardon;
 
-	std::cout << std::endl;
+	// std::cout << std::endl;
 
-	b6.signForm(shrub);
-	b6.signForm(robot);
-	b6.signForm(pardon);
+	// b6.signForm(shrub);
+	// b6.signForm(robot);
+	// b6.signForm(pardon);
 
-	b6.executeForm(shrub);
-	b6.executeForm(robot);
-	b6.executeForm(pardon);
+	// b6.executeForm(shrub);
+	// b6.executeForm(robot);
+	// b6.executeForm(pardon);
 	
-	std::cout << std::endl;
+	// std::cout << std::endl;
 
-	b7.signForm(shrub);
-	b7.signForm(robot);
-	b7.signForm(pardon);
+	// b7.signForm(shrub);
+	// b7.signForm(robot);
+	// b7.signForm(pardon);
 
-	b7.executeForm(shrub);
-	b7.executeForm(robot);
-	b7.executeForm(pardon);
+	// b7.executeForm(shrub);
+	// b7.executeForm(robot);
+	// b7.executeForm(pardon);
 	
-	std::cout << std::endl;
+	// std::cout << std::endl;
 
-	b8.signForm(shrub);
-	b8.signForm(robot);
-	b8.signForm(pardon);
+	// b8.signForm(shrub);
+	// b8.signForm(robot);
+	// b8.signForm(pardon);
 
-	b8.executeForm(shrub);
-	b8.executeForm(robot);
-	b8.executeForm(pardon);
+	// b8.executeForm(shrub);
+	// b8.executeForm(robot);
+	// b8.executeForm(pardon);
 	
-	std::cout << std::endl;
+	// std::cout << std::endl;
 
 
 	std::cout << "\n\n/////////////////////////EX03/////////////////////////\n" << std::endl;
@@ -157,7 +157,7 @@ int main()
 	AForm *p;
 	Bureaucrat b9("Carl", 4);
 
-	p = mike.makeForm("presidential", "Gold King");
+	p = mike.makeForm("Robotomy", "Gold King");
 	if (!p)
 	{
 		std::cout << "Error: the form does not exist\n";
@@ -168,6 +168,7 @@ int main()
 
 	b9.signForm(*p);
 	b9.executeForm(*p);
+	delete p;
 	
 	std::cout << std::endl;
 }

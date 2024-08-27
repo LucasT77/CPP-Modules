@@ -42,8 +42,16 @@ AForm *Intern::makeForm(std::string formName, std::string target)
 		if (found != std::string::npos)
 		{
 			final = forms[i];
+			for (int j = 0; j < 3; j++)
+			{
+				if (j == i)
+					continue;
+				delete forms[j];
+			}
 			return (final);
 		}
 	}
+	for (int j = 0; j < 3; j++)
+		delete forms[j];
 	return NULL;
 }
