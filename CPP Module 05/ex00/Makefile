@@ -10,9 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	Bureaucracy
+NAME			=	convert
 
-SOURCE			=	main.cpp Bureaucrat.cpp
+SOURCE			=	main.cpp ScalarConverter.cpp
 OBJECT			=	$(SOURCE:.cpp=.o)
 
 CXX 			=	c++

@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luaraujo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 15:20:46 by luaraujo          #+#    #+#             */
-/*   Updated: 2024/08/19 15:20:48 by luaraujo         ###   ########.fr       */
+/*   Created: 2024/08/27 17:05:42 by luaraujo          #+#    #+#             */
+/*   Updated: 2024/08/27 17:05:43 by luaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef SCALARCONVERTER_HPP
+# define SCALARCONVERTER_HPP
 
-int main(int argc, char **argv)
+#include <iostream>
+#include <string>
+//#include <bits/stdc++.h> 
+#include <stdlib.h>
+
+class ScalarConverter
 {
-    if (argc != 2)
-    {
-        std::cout << "Wrong number of arguments. There must one.\n";
-        return 0;
-    }
-    ScalarConverter::convert(argv[1]);
-}
+	public:
+		ScalarConverter();
+		ScalarConverter(ScalarConverter &other);
+		ScalarConverter &operator=(const ScalarConverter &other);
+		~ScalarConverter();
+
+		static void convert(std::string str);
+};
+
+# endif
