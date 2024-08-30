@@ -156,3 +156,8 @@ void	ScalarConverter::convert(const std::string str)
 	print_float(var_double);
 	print_double(var_double);	
 }
+
+
+//strtod
+//char **end = new char*;
+//_double = st::strtod(str.c_str(), end);
