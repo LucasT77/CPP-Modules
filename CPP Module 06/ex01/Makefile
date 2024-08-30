@@ -12,7 +12,7 @@
 
 NAME			=	Serialization
 
-SOURCE			=	main.cpp
+SOURCE			=	main.cpp Serializer.cpp
 OBJECT			=	$(SOURCE:.cpp=.o)
 
 CXX 			=	c++

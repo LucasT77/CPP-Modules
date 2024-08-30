@@ -1,13 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luaraujo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 15:21:01 by luaraujo          #+#    #+#             */
-/*   Updated: 2024/08/19 15:21:02 by luaraujo         ###   ########.fr       */
+/*   Created: 2024/08/30 18:19:02 by luaraujo          #+#    #+#             */
+/*   Updated: 2024/08/30 18:19:03 by luaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
+#ifndef SERIALIZER_HPP
+# define SERIALIZER_HPP
+
+#include <iostream>
+
+class Serializer
+{
+	private:
+		
+
+	public:
+		Serializer();
+		Serializer(Serializer &other);
+		Serializer &operator=(const Serializer &other);
+		~Serializer();
+};
+
+# endif
