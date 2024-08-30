@@ -15,8 +15,9 @@
 
 #include <iostream>
 #include <string>
-//#include <bits/stdc++.h> 
 #include <stdlib.h>
+#include <limits>
+#include <cmath>
 
 class ScalarConverter
 {
@@ -26,7 +27,7 @@ class ScalarConverter
 		ScalarConverter &operator=(const ScalarConverter &other);
 		~ScalarConverter();
 
-		static void convert(std::string str);
+		static void convert(const std::string str);
 };
 
 # endif

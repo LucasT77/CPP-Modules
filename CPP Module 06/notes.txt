@@ -1,3 +1,16 @@
 ex00: use static_cast
 ex01: use reinterpret_cast
 ex02: use dynamic_cast
+
+https://web.itu.edu.tr/sgunduz/courses/mikroisl/ascii.html
+https://en.cppreference.com/w/cpp/types/numeric_limits/infinity
+https://stackoverflow.com/questions/16691207/c-c-nan-constant-literal
+https://en.cppreference.com/w/cpp/types/numeric_limits
+https://www.geeksforgeeks.org/check-if-a-float-value-is-equivalent-to-an-integer-value/
+https://cplusplus.com/reference/string/string/compare/#google_vignette
+https://en.cppreference.com/w/c/string/byte/strtof
+https://stackoverflow.com/questions/43810190/string-to-long-double-conversion-in-c98
+https://www.geeksforgeeks.org/atol-atoll-and-atof-functions-in-c-c/
+https://www.learncpp.com/cpp-tutorial/static-member-functions/
+https://cplusplus.com/articles/iG3hAqkS/#google_vignette
+https://www.geeksforgeeks.org/casting-operators-in-cpp/
