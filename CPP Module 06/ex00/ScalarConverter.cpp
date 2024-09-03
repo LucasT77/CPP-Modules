@@ -134,14 +134,9 @@ void print_double(double var_double)
 	std::cout << "double: " << var_double << doubleAdditions(var_double) << std::endl;
 }
 
-///////Method
-
-void	ScalarConverter::convert(const std::string str)
+void impossible_or_0(bool i)
 {
-	const char	*str_array;
-	double		var_double;
-
-	if(check_zero(str) == 0)
+	if (!i)
 	{
 		std::cout << "char: " << "Non displayable" << std::endl;
 		std::cout << "int: " << 0 << std::endl;
@@ -149,15 +144,24 @@ void	ScalarConverter::convert(const std::string str)
 		std::cout << "double: " << "0.0" << std::endl;
 		return ;
 	}
-	str_array = str.c_str();
-	var_double = atof(str_array);
+	std::cout << "char: " << "impossible" << std::endl;
+	std::cout << "int: " << "impossible" << std::endl;
+	std::cout << "float: " << "impossible" << std::endl;
+	std::cout << "double: " << "impossible" << std::endl;
+}
+
+void	ScalarConverter::convert(const std::string str)
+{
+	char		*end;
+	double		var_double;
+
+	if(check_zero(str) == 0)
+		return impossible_or_0(0);
+	var_double = std::strtod(str.c_str(), &end);
+	if (end[0] != 0 && (end[0] != 'f' || end[1] != 0))
+		return impossible_or_0(1) ;
 	print_char(var_double);
 	print_int(var_double);
 	print_float(var_double);
-	print_double(var_double);	
+	print_double(var_double);
 }
-
-
-//strtod
-//char **end = new char*;
-//_double = st::strtod(str.c_str(), end);
