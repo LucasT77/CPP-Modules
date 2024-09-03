@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luaraujo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: luaraujo <luaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 15:21:01 by luaraujo          #+#    #+#             */
-/*   Updated: 2024/08/19 15:21:02 by luaraujo         ###   ########.fr       */
+/*   Created: 2024/09/03 16:52:02 by luaraujo          #+#    #+#             */
+/*   Updated: 2024/09/03 16:52:04 by luaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
+#ifndef DATA_HPP
+# define DATA_HPP
 
-int main()
+typedef struct s_data
 {
-	Data *ptr = new Data;
-	
-	ptr->number = 5;
-	std::cout	<< Serializer::deserialize(Serializer::serialize(ptr))->number
-				<< std::endl;
-	delete ptr;
-}
+	int number;
+}				Data;
+
+#endif
