@@ -10,4 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "iter.hpp"
 
+int main()
+{
+	int arr[10];
+	for (int i = 0; i < 10; i++)
+		arr[i] = i;
+	::iter(arr, 10, print<int>);
+
+	std::string str[] = {"Red", "Green", "Blue"};
+	::iter(str, 3, print<std::string>);
+}
