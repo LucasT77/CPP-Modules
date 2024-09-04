@@ -10,9 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	real_identifier
+NAME			=	identify
 
-SOURCE			=	main.cpp
+SOURCE			=	main.cpp Base.cpp functions.cpp
 OBJECT			=	$(SOURCE:.cpp=.o)
 
 CXX 			=	c++

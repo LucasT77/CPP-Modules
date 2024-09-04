@@ -14,3 +14,4 @@ https://www.geeksforgeeks.org/atol-atoll-and-atof-functions-in-c-c/
 https://www.learncpp.com/cpp-tutorial/static-member-functions/
 https://cplusplus.com/articles/iG3hAqkS/#google_vignette
 https://www.geeksforgeeks.org/casting-operators-in-cpp/
+https://www.geeksforgeeks.org/strtod-function-in-c-c/

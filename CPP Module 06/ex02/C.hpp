@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luaraujo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: luaraujo <luaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 15:21:14 by luaraujo          #+#    #+#             */
-/*   Updated: 2024/08/19 15:21:16 by luaraujo         ###   ########.fr       */
+/*   Created: 2024/09/03 17:27:02 by luaraujo          #+#    #+#             */
+/*   Updated: 2024/09/03 17:27:06 by luaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef C_HPP
+# define C_HPP
+
 #include "Base.hpp"
 
-Base * generate(void);
-void identify(Base* p);
-void identify(Base& p);
+class C : public Base {};
 
-int main()
-{
-    Base *test;
-    test = generate();
-    identify(test);
-    identify(*test);
-    delete test;
-}
+# endif

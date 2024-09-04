@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luaraujo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: luaraujo <luaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 15:21:14 by luaraujo          #+#    #+#             */
-/*   Updated: 2024/08/19 15:21:16 by luaraujo         ###   ########.fr       */
+/*   Created: 2024/09/03 17:25:15 by luaraujo          #+#    #+#             */
+/*   Updated: 2024/09/03 17:25:17 by luaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
+#ifndef BASE_HPP
+# define BASE_HPP
 
-Base * generate(void);
-void identify(Base* p);
-void identify(Base& p);
+#include <iostream>
+#include <time.h>
+#include <cstdlib>
 
-int main()
+class Base
 {
-    Base *test;
-    test = generate();
-    identify(test);
-    identify(*test);
-    delete test;
-}
+	public:
+		virtual ~Base();
+};
+
+# endif
