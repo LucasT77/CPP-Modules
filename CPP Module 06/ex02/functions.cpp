@@ -65,13 +65,32 @@ void identify(Base& p)
 {
 	char id;
 
-	if (dynamic_cast<A &>(p))
+	try
+	{
+		dynamic_cast<A &>(p);
 		id = 'A';
-	else if (dynamic_cast<B &>(p))
-		id = 'B';
-	else if (dynamic_cast<C &>(p))
-		id = 'C';
-	else
-		id = 0;
+	}
+	catch(const std::exception& e)
+	{
+		try
+		{
+			dynamic_cast<B &>(p);
+			id = 'B';
+		}
+		catch(const std::exception& e)
+		{
+			try
+			{
+				dynamic_cast<C &>(p);
+				id = 'C';
+			}
+			catch(const std::exception& e)
+			{
+				id = 0;
+			}
+			
+		}
+		
+	}
 	print_id(id, '&');
 }

@@ -15,3 +15,4 @@ https://www.learncpp.com/cpp-tutorial/static-member-functions/
 https://cplusplus.com/articles/iG3hAqkS/#google_vignette
 https://www.geeksforgeeks.org/casting-operators-in-cpp/
 https://www.geeksforgeeks.org/strtod-function-in-c-c/
+https://stackoverflow.com/questions/1276847/difference-in-behavior-while-using-dynamic-cast-with-reference-and-pointers
