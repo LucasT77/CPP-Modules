@@ -1,0 +1,4 @@
+https://www.geeksforgeeks.org/templates-cpp/
+https://www.geeksforgeeks.org/generics-in-c/
+https://stackoverflow.com/questions/1174169/function-passed-as-template-argument
+https://stackoverflow.com/questions/71558717/proper-use-of-template-classes
