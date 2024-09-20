@@ -27,3 +27,7 @@
 	//clear all the elements of vector
 	numbers.clear();
 	cout << "Size after clear: " << numbers.size() << endl;
+
+
+
+https://github.com/Dsite42/CPP08/tree/main
