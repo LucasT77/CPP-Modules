@@ -10,4 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SPAN_HPP
+# define SPAN_HPP
 
+#include <iostream>
+
+class Span
+{
+	private:
+		unsigned int N = 10000;
+
+	public:
+		Span();
+		Span(unsigned int n);
+		Span(Span &original);
+		Span &operator=(const Span &original);
+		~Span();
+
+		void addNumber(int num);
+		unsigned int shortestSpan();
+		unsigned int longestSpan();
+};
+
+# endif

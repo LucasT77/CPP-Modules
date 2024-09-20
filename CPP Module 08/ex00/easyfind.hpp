@@ -10,4 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
 
+#include <iostream>
+#include <algorithm>
+
+class easyFind : public std::exception
+{
+    public:
+        const char *what() const throw()
+        {
+            return "Element not found in the container";
+        }
+};
+
+template <typename T>
+bool easyfind(T container, int num)
+{
+    if (std::find(container.begin(), container.end(), num) == container.end())
+    {
+        throw easyFind();
+        return 0;
+    }
+    return 1;
+}
+
+#endif
