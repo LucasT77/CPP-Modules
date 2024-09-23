@@ -14,14 +14,18 @@
 # define SPAN_HPP
 
 #include <iostream>
+#include <vector>
+#include <iterator>
+#include <bits/stdc++.h>
+#include <time.h>
 
 class Span
 {
 	private:
 		unsigned int N = 10000;
+		std::vector<int> vec;
 
 	public:
-		Span();
 		Span(unsigned int n);
 		Span(Span &original);
 		Span &operator=(const Span &original);
@@ -30,6 +34,21 @@ class Span
 		void addNumber(int num);
 		unsigned int shortestSpan();
 		unsigned int longestSpan();
+		void addManyNumbers(unsigned int quantity);
+		void printConteiner();
+
+
+		class VectorTooSmallException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
+		class VectorFullException: public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
 };
 
 # endif
