@@ -46,7 +46,7 @@ void print_id(char id, char type)
 		std::cout << "The object from Base" << type << " belongs to the class: " << id << std::endl;
 } 
 
-void identify(Base* p)
+void identify(Base* p) //Pointer can be NULL, so 'if' works
 {
 	char id;
 
@@ -61,7 +61,7 @@ void identify(Base* p)
 	print_id(id, '*');
 }
 
-void identify(Base& p)
+void identify(Base& p) //Reference cannot be NULL, so 'if' does not work and exception must be used
 {
 	char id;
 
