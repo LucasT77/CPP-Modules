@@ -20,7 +20,7 @@ Span::Span(unsigned int n)
 	vec.resize(N);
 }
 
-Span::Span(Span &original)
+Span::Span(const Span &original)
 {
 	*this = original;
 }
