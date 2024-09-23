@@ -27,7 +27,7 @@ class Span
 
 	public:
 		Span(unsigned int n);
-		Span(Span &original);
+		Span(const Span &original);
 		Span &operator=(const Span &original);
 		~Span();
 
