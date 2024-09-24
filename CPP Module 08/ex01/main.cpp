@@ -14,7 +14,10 @@
 
 int main()
 {
-	Span sp = Span(5);
+	
+	std::cout << "/////////TEST 1//////////\n";
+
+	Span sp = Span(15);
 
 	sp.addNumber(6);
 	sp.addNumber(3);
@@ -22,8 +25,33 @@ int main()
 	sp.addNumber(9);
 	sp.addNumber(11);
 
+	sp.printContainer();
+	std::cout << "\n\n";
 	std::cout << sp.shortestSpan() << std::endl;
 	std::cout << sp.longestSpan() << std::endl;
+	std::cout << "\n\n";
+	sp.printContainer();
+
+	std::cout << "\n/////////TEST 2//////////\n";
+
+	Span sp2(100);
+	sp2.addManyNumbers(50);
+	//sp2.printSortedContainer();
+	std::cout << "\n\n";
+	std::cout << sp2.shortestSpan() << std::endl;
+	std::cout << sp2.longestSpan() << std::endl;
+
+	std::cout << "\n/////////TEST 3//////////\n";
+
+	Span sp3(15000);
+	sp3.addManyNumbers(12000);
+	std::cout << "\n\n";
+	std::cout << sp3.shortestSpan() << std::endl;
+	std::cout << sp3.longestSpan() << std::endl;
 
 	return 0;
 }
+
+
+//1
+//4294967293

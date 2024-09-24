@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	Span
+NAME			=	span
 
 SOURCE			=	main.cpp Span.cpp
 OBJECT			=	$(SOURCE:.cpp=.o)

@@ -22,7 +22,7 @@
 class Span
 {
 	private:
-		unsigned int N = 10000;
+		unsigned int N;
 		std::vector<int> vec;
 
 	public:
@@ -32,10 +32,11 @@ class Span
 		~Span();
 
 		void addNumber(int num);
-		unsigned int shortestSpan();
+		int shortestSpan();
 		unsigned int longestSpan();
 		void addManyNumbers(unsigned int quantity);
-		void printConteiner();
+		void printContainer();
+		void printSortedContainer();
 
 
 		class VectorTooSmallException : public std::exception
