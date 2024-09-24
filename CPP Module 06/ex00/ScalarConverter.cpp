@@ -37,6 +37,8 @@ bool isPseudo(double d)
 bool check_zero(std::string str)
 {
 	int  i = 0;
+	while (isspace(str[i]))
+		i++;
 	if (str[i] == '0')
 	{
 		i++;
@@ -47,6 +49,20 @@ bool check_zero(std::string str)
 		else
 			i++;
 		while (str[i] == '0')
+			i++;
+		if (str[i] == 'f')
+			i++;
+		if (!str[i])
+			return 0;
+	}
+	else if (str[i] == '.')
+	{
+		i++;
+		if (str[i] != '0')
+			return 1;
+		while (str[i] == '0')
+			i++;
+		if (str[i] == 'f')
 			i++;
 		if (!str[i])
 			return 0;
@@ -150,6 +166,23 @@ void impossible_or_0(bool i)
 	std::cout << "double: " << "impossible" << std::endl;
 }
 
+bool checkCharLiteral(std::string str, double *var_double)
+{
+	int i = 0;
+	double temp;
+	while (isspace(str[i]))
+		i++;
+	temp = str[i];
+	if (temp <= 0 || temp > 255)
+		return false;
+	if (!str[i + 1])
+	{
+		*var_double = temp;
+		return true;
+	}
+	return false;
+}
+
 void	ScalarConverter::convert(const std::string str)
 {
 	char		*end;
@@ -157,9 +190,12 @@ void	ScalarConverter::convert(const std::string str)
 
 	if(check_zero(str) == 0)
 		return impossible_or_0(0);
-	var_double = std::strtod(str.c_str(), &end);
-	if (end[0] != 0 && (end[0] != 'f' || end[1] != 0))
-		return impossible_or_0(1) ;
+	if (!checkCharLiteral(str, &var_double))
+	{
+		var_double = std::strtod(str.c_str(), &end);
+		if (end[0] != 0 && (end[0] != 'f' || end[1] != 0))
+			return impossible_or_0(1) ;
+	}
 	print_char(var_double);
 	print_int(var_double);
 	print_float(var_double);
