@@ -16,10 +16,10 @@
 #include <iostream>
 
 template <typename T, typename F>
-void iter(T *arr, size_t length, F function)
+void iter(T *arr, size_t length, (*f)(F&))
 {
 	for (size_t i = 0; i < length; i++)
-		function(arr[i]);
+		(*f)(arr[i]);
 }
 
 template <typename T>
