@@ -22,10 +22,25 @@ class MutantStack
 		std::stack<T> _stack;
 
 	public:
+		//Constructors
 		MutantStack();
 		MutantStack(MutantStack &other);
 		MutantStack &operator=(const MutantStack &other);
 		~MutantStack();
+
+		//Stack Original Methods
+		T top();
+		bool empty();
+		unsigned int size();
+		void push(T arg);
+		void pop();
+		void swap(MutantStack &other);
+		void emplace(T arg);	
+		
+		class Iterator
+		{
+
+		};
 };
 
 ///////Contructors & Destructor///////
