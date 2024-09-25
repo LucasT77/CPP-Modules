@@ -24,7 +24,7 @@ class Array
 	public:
 		Array();
 		Array(unsigned int n);
-		Array(Array &other);
+		Array(const Array &other);
 		Array &operator=(const Array &other);
 		~Array();
 
@@ -55,7 +55,7 @@ Array<T>::Array(unsigned int n)
 }
 
 template <typename T>
-Array<T>::Array(Array &other)
+Array<T>::Array(const Array &other) : arr(new T[other.size()]), _size(other.size())
 {
 	*this = other;
 }
