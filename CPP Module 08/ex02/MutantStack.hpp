@@ -52,10 +52,10 @@ class MutantStack
 			public:
 				//Tags
 				using iterator_category = std::random_iterator_tag;
-    			using difference_type   = std::ptrdiff_t;
-    			using value_type        = T;
-    			using pointer           = T*;  // or also value_type*
-    			using reference			= T&;
+				using difference_type   = std::ptrdiff_t;
+				using value_type        = T;
+				using pointer           = T*;  // or also value_type*
+				using reference			= T&;
 
 				//Constructor
 				iterator(T* ptr);
