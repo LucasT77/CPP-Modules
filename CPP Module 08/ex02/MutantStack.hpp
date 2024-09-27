@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <stack>
+#include <iterator> // For std::random_iterator_tag
+#include <cstddef>  // For std::ptrdiff_t
 
 template <typename T>
 class MutantStack
@@ -48,9 +50,17 @@ class MutantStack
 				T* it_ptr;
 
 			public:
+				//Tags
+				using iterator_category = std::random_iterator_tag;
+    			using difference_type   = std::ptrdiff_t;
+    			using value_type        = T;
+    			using pointer           = T*;  // or also value_type*
+    			using reference			= T&;
 
+				//Constructor
 				iterator(T* ptr);
 
+				//Operator overload
 				iterator &operator=(T *ptr);
 				bool operator==(MutantStack<T>::iterator other);
 				bool operator!=(MutantStack<T>::iterator other);
