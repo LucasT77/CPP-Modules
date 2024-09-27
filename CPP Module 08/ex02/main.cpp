@@ -30,7 +30,7 @@ int main()
 	mstack.push(0);
 	
 	MutantStack<int>::iterator it = mstack.begin();
-	MutantStack<int>::iterator ite = mstack.end();
+	MutantStack<int>::iterator ite =  mstack.end();
 	++it;
 	--it;
 	
