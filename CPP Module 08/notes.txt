@@ -33,3 +33,4 @@
 https://github.com/Dsite42/CPP08/tree/main
 https://www.internalpointers.com/post/writing-custom-iterators-modern-cpp
 https://stackoverflow.com/questions/4421706/what-are-the-basic-rules-and-idioms-for-operator-overloading/4421729#4421729
+https://medium.com/@joao_vaz/c-iterators-and-implementing-your-own-custom-one-a-primer-72f1506e5d71
