@@ -16,14 +16,14 @@
 #include <iostream>
 
 template <typename T, typename F>
-void iter(T *arr, size_t length, (*f)(F&))
+void iter(T *arr, size_t length, void (*f)(F&))
 {
 	for (size_t i = 0; i < length; i++)
 		(*f)(arr[i]);
 }
 
 template <typename T>
-void print(T arg)
+void print(T& arg)
 {
 	std::cout << arg << std::endl;
 }
