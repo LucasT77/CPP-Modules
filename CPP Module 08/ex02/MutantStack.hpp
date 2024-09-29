@@ -51,24 +51,32 @@ class MutantStack
 
 			public:
 				//Tags
-				using iterator_category	= std::random_iterator_tag;
+				using iterator_category	= std::random_access_iterator_tag;
 				using difference_type	= std::ptrdiff_t;
 				using value_type		= T;
 				using pointer			= T*;
 				using reference			= T&;
 
-				//Constructor
-				iterator(T* ptr);
+				//Constructors
+				iterator();
+				iterator(pointer ptr);
 
 				//Operator overload
 				iterator &operator=(T *ptr);
-				bool operator==(MutantStack<T>::iterator other);
-				bool operator!=(MutantStack<T>::iterator other);
+
+				reference operator*(void) const {return *it_ptr;}
+				pointer operator->(void) const {return it_ptr;}
+				reference operator[](difference_type n) const {return *(it_ptr + n);}
+
 				iterator &operator++(void);
-				iterator &operator--(void);
 				iterator operator++(T);
+				iterator &operator--(void);
 				iterator operator--(T);
-				T operator*(void);
+				iterator &operator+=(difference_type n);
+				iterator &operator-=(difference_type n);
+
+				// bool operator==(MutantStack<T>::iterator other);
+				bool operator!=(MutantStack<T>::iterator other);
 		};
 };
 
@@ -119,18 +127,18 @@ void			MutantStack<T>::emplace(T arg) {_stack.emplace(arg);}
 ///////Iterator Methods///////
 
 template <typename T>
-T	*MutantStack<T>::begin() {return _stack;}
+T	*MutantStack<T>::begin() {return &_stack.top();}
 
 template <typename T>
-T	*MutantStack<T>::end() {return _stack + (_stack.size() - 1);}
+T	*MutantStack<T>::end() {return &_stack.top() - (_stack.size() - 1);}
 
-///////Iterator Constructor///////
+///////Iterator Constructors///////
 
 template <typename T>
-MutantStack<T>::iterator::iterator(T* ptr) : it_ptr(ptr)
-{
+MutantStack<T>::iterator::iterator() : it_ptr(nullptr) {}
 
-}
+template <typename T>
+MutantStack<T>::iterator::iterator(pointer ptr) : it_ptr(ptr) {}
 
 ///////Iterator Overload///////
 
@@ -142,28 +150,9 @@ MutantStack<T>::iterator &MutantStack<T>::iterator::operator=(T *ptr)
 }
 
 template <typename T>
-bool MutantStack<T>::iterator::operator==(MutantStack<T>::iterator other)
-{
-	return (this->it_ptr == other.it_ptr);
-}
-
-template <typename T>
-bool MutantStack<T>::iterator::operator!=(MutantStack<T>::iterator other)
-{
-	return (this->it_ptr != other.it_ptr);
-}
-
-template <typename T>
 MutantStack<T>::iterator &MutantStack<T>::iterator::operator++(void)
 {
-	this->it_ptr++;
-	return (*this);
-}
-
-template <typename T>
-MutantStack<T>::iterator &MutantStack<T>::iterator::operator--(void)
-{
-	this->it_ptr--;
+	this->++it_ptr;
 	return (*this);
 }
 
@@ -171,22 +160,109 @@ template <typename T>
 MutantStack<T>::iterator MutantStack<T>::iterator::operator++(T)
 {
 	MutantStack<T>::iterator tmp = *this;
-	++(*this);
+	++it_ptr;
 	return (tmp);
+}
+
+template <typename T>
+MutantStack<T>::iterator &MutantStack<T>::iterator::operator--(void)
+{
+	this->--it_ptr;
+	return (*this);
 }
 
 template <typename T>
 MutantStack<T>::iterator MutantStack<T>::iterator::operator--(T)
 {
 	MutantStack<T>::iterator tmp = *this;
-	--(*this);
+	--it_ptr;
 	return (tmp);
 }
 
 template <typename T>
-T MutantStack<T>::iterator::operator*(void)
+MutantStack<T>::iterator &MutantStack<T>::iterator::operator+=(difference_type n)
 {
-	return *it_ptr;
+	it_ptr += n;
+	return *this;
 }
+
+template <typename T>
+MutantStack<T>::iterator &MutantStack<T>::iterator::operator-=(difference_type n)
+{
+	it_ptr -= n;
+	return *this;
+}
+
+template <typename T>
+bool MutantStack<T>::iterator::operator!=(MutantStack<T>::iterator other)
+{
+	return this->it_ptr != other.it_ptr;
+}
+
+///////External Iterator Overload///////
+
+// template <typename T>
+// bool operator==(const MutantStack<T>::iterator& lhs, const MutantStack<T>::iterator& rhs)
+// {
+// 	return lhs.it_ptr == rhs.it_ptr;
+// }
+
+// template <typename T>
+// bool operator!=(const MutantStack<T>::iterator& lhs, const MutantStack<T>::iterator& rhs)
+// {
+// 	return lhs.it_ptr != rhs.it_ptr;
+// }
+
+// template <typename T>
+// bool operator<(const MutantStack<T>::iterator& lhs, const MutantStack<T>::iterator& rhs)
+// {
+// 	return lhs.it_ptr < rhs.it_ptr;
+// }
+
+// template <typename T>
+// bool operator>(const MutantStack<T>::iterator& lhs, const MutantStack<T>::iterator& rhs)
+// {
+// 	return lhs.it_ptr > rhs.it_ptr;
+// }
+
+// template <typename T>
+// bool operator<=(const MutantStack<T>::iterator& lhs, const MutantStack<T>::iterator& rhs)
+// {
+// 	return lhs.it_ptr <= rhs.it_ptr;
+// }
+
+// template <typename T>
+// bool operator>=(const MutantStack<T>::iterator& lhs, const MutantStack<T>::iterator& rhs)
+// {
+// 	return lhs.it_ptr >= rhs.it_ptr;
+// }
+
+// template <typename T>
+// MutantStack<T>::iterator operator+(const MutantStack<T>::iterator& it, std::ptrdiff_t n)
+// {
+// 	const MutantStack<T>::iterator tmp = it;
+// 	tmp += n;
+// 	return tmp;
+// }
+
+// template <typename T>
+// MutantStack<T>::iterator operator+(std::ptrdiff_t n, const MutantStack<T>::iterator& it)
+// {
+// 	return it + n;
+// }
+
+// template <typename T>
+// MutantStack<T>::iterator operator-(const MutantStack<T>::iterator& it, std::ptrdiff_t n)
+// {
+// 	const MutantStack<T>::iterator tmp = it;
+// 	tmp -= n;
+// 	return tmp;
+// }
+
+// template <typename T>
+// MutantStack<T>::iterator operator-(const MutantStack<T>::iterator& lhs, const MutantStack<T>::iterator& rhs)
+// {
+// 	return lhs.it_ptr - rhs.it_ptr;
+// }
 
 #endif
