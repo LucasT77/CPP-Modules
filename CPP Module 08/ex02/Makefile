@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	Abomination
+NAME			=	abomination
 
 SOURCE			=	main.cpp
 OBJECT			=	$(SOURCE:.cpp=.o)
