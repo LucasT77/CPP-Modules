@@ -17,13 +17,14 @@
 #include <fstream>
 #include <string>
 #include <map>
+#include <stdlib.h>
 
 class BitcoinExchange
 {
 	private:
-		std::map<std::string, int> exchange_rate;
-		std::map<std::string, int> transactions;
-		std::map<std::string, int> values;
+		std::map<std::string, float> exchange_rate;
+		std::map<std::string, float> transactions;
+		std::map<std::string, float> values;
 
 	public:
 		BitcoinExchange();
@@ -32,6 +33,8 @@ class BitcoinExchange
 		~BitcoinExchange();
 
 		void account_btc(std::ifstream& data, std::ifstream& input);
+		void convertDataToMap(std::ifstream& data);
+		void convertInputToMap(std::ifstream& data);
 };
 
 # endif

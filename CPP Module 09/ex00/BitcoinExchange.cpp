@@ -34,5 +34,67 @@ BitcoinExchange::~BitcoinExchange() {}
 
 void	BitcoinExchange::account_btc(std::ifstream& data, std::ifstream& input)
 {
-	
+	convertDataToMap(data);
+	convertInputToMap(input);
+}
+
+void BitcoinExchange::convertDataToMap(std::ifstream& data)
+{
+	std::string	line;
+	std::string	time;
+	std::string	num_str;
+	float		num;
+	int			i;
+
+	while (getline(data, line))
+	{
+		i = -1;
+		while (line[++i] != ',')
+			time[i] = line[i];
+		while (line[++i])
+			num_str[i] = line[i];
+		num = std::strtof(num_str.c_str(), NULL);
+		exchange_rate.insert(std::pair<std::string, float>(time, num));
+	}
+}
+
+bool checkLineError(std::string line)
+{
+
+}
+
+bool checkTimeError(std::string time)
+{
+
+}
+
+bool checkNumberError(std::string num)
+{
+
+}
+
+void BitcoinExchange::convertInputToMap(std::ifstream& input)
+{
+	std::string	line;
+	std::string	time;
+	std::string	num_str;
+	float		num;
+	int			i;
+
+	while (getline(input, line))
+	{
+		if (checkLineError(line))
+			continue ;
+		i = -1;
+		while (line[++i] != '|')
+			time[i] = line[i];
+		if (checkTimeError(line))
+			continue ;
+		while (line[++i])
+			num_str[i] = line[i];
+		num = std::strtof(num_str.c_str(), NULL);
+		if (checkNumberError(line))
+			continue ;
+		transactions.insert(std::pair<std::string, float>(time, num));
+	}
 }
