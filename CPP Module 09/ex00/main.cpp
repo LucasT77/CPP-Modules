@@ -10,4 +10,49 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "BitcoinExchange.hpp"
 
+int main(int argc, char **argv)
+{
+	std::ifstream	data_file;
+	std::ifstream	input_file;
+
+	if (argc != 2)
+		return std::cout << "Invalid number of arguments. Try \"./btc filename\"\n", 0;
+    data_file.open("data.csv");
+	if (!data_file.is_open())
+		return std::cout << "Cannot open \"data.csv\" file\n", 0;
+	input_file.open(argv[1]);
+	if (!input_file.is_open())
+		return std::cout << "Cannot open input file file\n", 0;
+
+	BitcoinExchange btc;
+	btc.account_btc(data_file, input_file);
+}
+
+/* Practice:
+#include <iostream>
+#include <string>
+#include <map>
+#include <iterator>
+
+
+int main() {
+    std::map<std::string, int> bit;
+    bit.insert(std::pair<std::string, int>("2011-01-13", 25));
+    bit.insert(std::pair<std::string, int>("2011-01-10", 25));
+    bit.insert(std::pair<std::string, int>("2008-11-14", 25));
+
+    
+    std::map<std::string, int>::iterator itr;
+    for (itr = bit.begin(); itr != bit.end(); ++itr)
+        std::cout << '\t' << itr->first << '\t' << itr->second << '\n';
+
+    return 0;
+}
+
+Output:
+2008-11-14	25
+2011-01-10	25
+2011-01-13	25
+*/

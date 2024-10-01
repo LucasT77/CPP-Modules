@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	BitcoinExchange
+NAME			=	btc
 
 SOURCE			=	main.cpp BitcoinExchange.cpp
 OBJECT			=	$(SOURCE:.cpp=.o)

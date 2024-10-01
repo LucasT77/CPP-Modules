@@ -10,4 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "BitcoinExchange.hpp"
 
+
+///////Constructors & Destructor///////
+
+BitcoinExchange::BitcoinExchange() {}
+
+BitcoinExchange::BitcoinExchange(BitcoinExchange &other) { *this = other; }
+
+BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other)
+{
+	this->exchange_rate = other.exchange_rate;
+	this->transactions = other.transactions;
+	this->values = other.values;
+	return *this;
+}
+
+BitcoinExchange::~BitcoinExchange() {}
+
+
+///////Methods///////
+
+void	BitcoinExchange::account_btc(std::ifstream& data, std::ifstream& input)
+{
+	
+}
