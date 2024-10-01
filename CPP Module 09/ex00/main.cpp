@@ -19,15 +19,12 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 		return std::cout << "Invalid number of arguments. Try \"./btc filename\"\n", 0;
-    data_file.open("data.csv");
-	if (!data_file.is_open())
-		return std::cout << "Cannot open \"data.csv\" file\n", 0;
 	input_file.open(argv[1]);
 	if (!input_file.is_open())
 		return std::cout << "Cannot open input file file\n", 0;
 
 	BitcoinExchange btc;
-	btc.account_btc(data_file, input_file);
+	btc.account_btc(input_file);
 }
 
 /* Practice:
