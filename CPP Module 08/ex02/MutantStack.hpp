@@ -131,7 +131,7 @@ template <typename T>
 T	*MutantStack<T>::begin() {return &_stack.top() - (_stack.size() - 1);}
 
 template <typename T>
-T	*MutantStack<T>::end() {return &_stack.top();}
+T	*MutantStack<T>::end() {return &_stack.top() + 1;}
 
 ///////Iterator Constructors///////
 
