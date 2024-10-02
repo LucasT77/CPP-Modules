@@ -16,15 +16,21 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cstring>
 #include <map>
-#include <stdlib.h>
+#include <cstdlib>
+#include <sstream> //to perform float to string
 
 class BitcoinExchange
 {
 	private:
-		std::map<std::string, float> exchange_rate;
-		std::map<std::string, float> transactions;
-		std::map<std::string, float> values;
+		std::multimap<std::string, float> exchange_rate;
+		std::multimap<std::string, float> transactions;
+		std::multimap<std::string, float> values;
+		void convertDataToMap(std::ifstream& data);
+		void convertInputToMap(std::ifstream& data);
+		void makeValue(std::multimap<std::string, float>::iterator it_data, std::multimap<std::string, float>::iterator it_input);
+		void printLine(std::string time, float num);
 
 	public:
 		BitcoinExchange();
@@ -33,9 +39,6 @@ class BitcoinExchange
 		~BitcoinExchange();
 
 		void account_btc(std::ifstream& input);
-		void convertDataToMap(std::ifstream& data);
-		void convertInputToMap(std::ifstream& data);
-		void makeValue(std::map<std::string, float>::iterator it_data, std::map<std::string, float>::iterator it_input);
 		void printResult();
 
 		class DataFileNotFound : public std::exception

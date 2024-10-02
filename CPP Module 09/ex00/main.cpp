@@ -14,17 +14,25 @@
 
 int main(int argc, char **argv)
 {
-	std::ifstream	data_file;
 	std::ifstream	input_file;
 
 	if (argc != 2)
 		return std::cout << "Invalid number of arguments. Try \"./btc filename\"\n", 0;
 	input_file.open(argv[1]);
 	if (!input_file.is_open())
-		return std::cout << "Cannot open input file file\n", 0;
+		return std::cout << "Cannot open input file\n", 0;
 
-	BitcoinExchange btc;
-	btc.account_btc(input_file);
+	try
+	{
+		BitcoinExchange btc;
+		btc.account_btc(input_file);
+		//btc.printResult();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
 }
 
 /* Practice:
