@@ -100,12 +100,3 @@ bool RPN::calculate(const std::string input, int *final_result)
 	*final_result = operands.top();
 	return 1;
 }
-
-// ./RPN "8 9 * 9 - 9 - 9 - 4 - 1 +"
-
-///////Exception///////
-
-// const char *RPN::badInput::what() const throw()
-// {
-//     return "Error: bad input\n";
-// }
