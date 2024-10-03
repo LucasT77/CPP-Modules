@@ -70,37 +70,6 @@ bool calculateResult(std::stack<int> &operands, char _operator)
 	return 1;
 }
 
-// bool RPN::calculate(const std::string str, int *final_result)
-// {
-// 	std::stack<int> operands;
-// 	std::size_t found_operand;
-// 	std::size_t found_operator = 0;
-// 	std::size_t i = 0;
-
-// 	if (!verifyString(str))
-// 		return std::cout << "Error: bad argument\n", 0;
-// 	while (str[i])
-// 	{
-// 		if (operands.size() == 2)
-// 		{
-// 			if (!calculateResult(operands, str[found_operator]))
-// 				return 0;
-// 			i = found_operator + 1;
-// 			continue ;
-// 		}
-// 		found_operand = (str.substr(i)).find_first_of("0123456789");
-// 		if (found_operator == 0 || found_operator < i)
-// 			found_operator = (str.substr(i)).find_first_of("+-*/");
-// 		std::cout << "found_operator = " << found_operator << std::endl;
-// 		if (found_operator < found_operand)
-// 			return std::cout << "Error: bad expression\n", 0;
-// 		for(i = found_operand + 1; str[i] != ' '; i++);
-// 		operands.push(ft_stoi(str.substr(found_operand, i - found_operand)));
-// 	}
-// 	*final_result = operands.top();
-// 	return 1;
-// }
-
 bool RPN::calculate(const std::string input, int *final_result)
 {
 	std::stack<int> operands;
