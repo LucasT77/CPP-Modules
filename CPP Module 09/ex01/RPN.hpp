@@ -27,12 +27,6 @@ class RPN
 		~RPN();
 
 		static bool calculate(const std::string str, int *result);
-
-		// class badInput : public std::exception
-		// {
-		// 	public:
-		// 		virtual const char* what() const throw();
-		// };
 };
 
 # endif
