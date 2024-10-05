@@ -172,6 +172,14 @@ void	sortList(std::list<unsigned int> &lst)
 	lst = mergeList(left, right);
 }
 
+bool checkDuplicates(const std::vector<unsigned int> vec)
+{
+	for(std::size_t i = 0; i < vec.size() - 1; i++)
+		if (vec[i] == vec[i + 1])
+			return 0;
+	return 1;
+}
+
 ///////METHOD///////
 
 void	PmergeMe::sort(int argc, char **argv)
@@ -179,7 +187,7 @@ void	PmergeMe::sort(int argc, char **argv)
 	std::vector<unsigned int> vec;
 	std::list<unsigned int> lst;
 	double time_vec;
-	double time_lst = 0;
+	double time_lst;
 
 	if (!arg_to_container(argc, argv, vec, lst))
 		return ;
@@ -190,6 +198,9 @@ void	PmergeMe::sort(int argc, char **argv)
 	std::clock_t start_lst = std::clock();
 	sortList(lst);
 	time_lst = static_cast<double>(std::clock() - start_lst) / static_cast<double>(CLOCKS_PER_SEC) * MICROSECOND;
+
+	if (!checkDuplicates(vec))
+		std::cout << "Warning: duplicated elements!\n";
 
 	// std::cout << "Sorted list: ";
 	// printList(lst);
