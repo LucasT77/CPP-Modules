@@ -34,7 +34,7 @@ bool	arg_to_container(int argc, char **argv, std::vector<unsigned int> &vec, std
 	{
 		buf = argv[i];
 		if (buf.find_first_not_of("0123456789") != std::string::npos)
-			return std::cout<< "Error", 0;
+			return std::cerr << "Error", 0;
 		num = atoi(argv[i]);
 		vec.push_back(num);
 		lst.push_back(num);

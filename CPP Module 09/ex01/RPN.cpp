@@ -52,19 +52,21 @@ int ft_stoi(const std::string str)
 
 bool calculateResult(std::stack<int> &operands, char _operator)
 {
+	if (operands.size() < 2)
+		return 0;
 	int buf1 = operands.top();
 	operands.pop();
 	int buf2 = operands.top();
 	operands.pop();
-	if (_operator == '-' && buf1 == 0)
-		return std::cout << "Error: trying to divide by 0\n", 0;
+	if (_operator == '/' && buf1 == 0)
+		return std::cerr << "Error: trying to divide by 0\n", 0;
 	switch (_operator)
 	{
 		case '+': operands.push(buf2 + buf1); break;
 		case '-': operands.push(buf2 - buf1); break;
 		case '*': operands.push(buf2 * buf1); break;
 		case '/': operands.push(buf2 / buf1); break;
-		default: return std::cout << "Error: cannot be calculated\n", 0;
+		default: return std::cerr << "Error: cannot be calculated\n", 0;
 			break;
 	}
 	return 1;
@@ -73,30 +75,34 @@ bool calculateResult(std::stack<int> &operands, char _operator)
 bool RPN::calculate(const std::string input, int *final_result)
 {
 	std::stack<int> operands;
-	std::size_t found_operand;
-	std::size_t found_operator = 0;
 	std::size_t i = 0;
 	std::string str = input;
+	std::string num;
 
 	if (!verifyString(str))
-		return std::cout << "Error: bad argument\n", 0;
+		return std::cerr << "Error: bad argument\n", 0;
 	while (str[i])
 	{
-		if (operands.size() == 2)
+		while ((str.substr(i)).find_first_of("0123456789") == 0)
+			num += str[i++];
+		if (!num.empty())
 		{
-			if (!calculateResult(operands, str[found_operator]))
+			operands.push(ft_stoi(num));
+			num.clear();
+		}
+		if ((str.substr(i)).find_first_of("+-*/") == 0)
+		{
+			if (operands.size() < 2)
+				return std::cerr << "Error: bad expression\n", 0;
+			if (!calculateResult(operands, str[i]))
 				return 0;
-			i = 0;
-			str = str.substr(found_operator + 1);
+			i++;
 			continue ;
 		}
-		found_operand = (str.substr(i)).find_first_of("0123456789");
-		found_operator = str.find_first_of("+-*/");
-		if (found_operator < found_operand)
-			return std::cout << "Error: bad expression\n", 0;
-		for(i = found_operand + 1; str[i] != ' '; i++);
-		operands.push(ft_stoi(str.substr(found_operand, i - found_operand)));
+		i++;
 	}
+	if (operands.size() != 1)
+		return std::cerr << "Error: bad expression\n", 0;
 	*final_result = operands.top();
 	return 1;
-}
+} 

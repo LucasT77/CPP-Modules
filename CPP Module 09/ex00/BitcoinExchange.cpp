@@ -62,12 +62,6 @@ void BitcoinExchange::printResult()
 
 	while (it != ite)
 	{
-		if ((*it).second == -1)
-		{
-			std::cout << (*it).first << std::endl;
-			it++;
-			continue ;
-		}
 		std::cout << (*it).first << " = " << (*it).second << std::endl;
 		it++;
 	}
@@ -77,7 +71,7 @@ void BitcoinExchange::printLine(std::string time, float num)
 {
 	if (num == -1)
 	{
-		std::cout << time << std::endl;
+		std::cerr << time << std::endl;
 		return ;
 	}
 	std::multimap<std::string, float>::iterator it_data;

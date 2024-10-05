@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 	int result;
 
 	if (argc != 2)
-		return std::cout << "Wrong number of arguments. There must be two.\n", 0;
+		return std::cerr << "Wrong number of arguments. There must be two.\n", 0;
 	if (RPN::calculate(argv[1], &result))
 		std::cout << result << std::endl;
 }

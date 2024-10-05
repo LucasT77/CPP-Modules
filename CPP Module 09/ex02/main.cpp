@@ -14,10 +14,9 @@
 
 int main(int argc, char **argv)
 {
-    if (argc < 2)
-		return std::cout << "Error: insufficient number of arguments\n", 0;
-
-    argv++;
+	if (argc < 2)
+		return std::cerr << "Error: insufficient number of arguments\n", 0;
+	argv++;
 	argc--;
     PmergeMe::sort(argc, argv);
 }
