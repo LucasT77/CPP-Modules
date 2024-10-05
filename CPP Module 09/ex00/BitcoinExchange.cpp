@@ -47,12 +47,6 @@ void	BitcoinExchange::account_btc(std::ifstream& input)
 	std::multimap<std::string, float>::iterator ite_input = transactions.end();
 	while (it_input != ite_input)
 	{
-		if ((*it_input).second == -1)
-		{
-			makeValue(it_data, it_input);
-			it_input++;
-			continue ;
-		}
 		it_data = exchange_rate.lower_bound((*it_input).first);
 		if ((*it_data).first != (*it_input).first)
 			it_data--;
@@ -187,14 +181,12 @@ void BitcoinExchange::convertInputToMap(std::ifstream& input)
 	{
 		if (checkLineError(line, &error_str))
 		{
-			transactions.insert(std::pair<std::string, float>(error_str, err_id));
 			printLine(error_str, err_id);
 			continue ;
 		}
 		time = line.substr(0, 10);
 		if (checkTimeError(time, &error_str))
 		{
-			transactions.insert(std::pair<std::string, float>(error_str, err_id));
 			printLine(error_str, err_id);
 			continue ;
 		}
@@ -202,7 +194,6 @@ void BitcoinExchange::convertInputToMap(std::ifstream& input)
 		num = std::strtof(num_str.c_str(), NULL);
 		if (checkNumberError(num, &error_str))
 		{
-			transactions.insert(std::pair<std::string, float>(error_str, err_id));
 			printLine(error_str, err_id);
 			continue ;
 		}
@@ -215,12 +206,6 @@ void BitcoinExchange::makeValue(std::multimap<std::string, float>::iterator it_d
 {
 	std::string final_str;
 	float final_num;
-
-	if ((*it_input).second == -1)
-	{
-		values.insert(std::pair<std::string, float>((*it_input).first, (*it_input).second));
-		return ;
-	}
 
 	std::ostringstream ss;
 	ss << (*it_input).second;
@@ -237,8 +222,3 @@ const char *BitcoinExchange::DataFileNotFound::what() const throw()
 {
     return "Cannot open \"data.csv\" file\n";
 }
-
-// const char *BitcoinExchange::CorruptedDataFile::what() const throw()
-// {
-//     return "Cannot open \"data.csv\" file\n";
-// }

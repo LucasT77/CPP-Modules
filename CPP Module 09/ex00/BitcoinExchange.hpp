@@ -24,7 +24,7 @@
 class BitcoinExchange
 {
 	private:
-		std::multimap<std::string, float> exchange_rate;
+		std::map<std::string, float> exchange_rate;
 		std::multimap<std::string, float> transactions;
 		std::multimap<std::string, float> values;
 		void convertDataToMap(std::ifstream& data);
@@ -46,12 +46,6 @@ class BitcoinExchange
 			public:
 				virtual const char* what() const throw();
 		};
-
-		// class CorruptedDataFile : public std::exception
-		// {
-		// 	public:
-		// 		virtual const char* what() const throw();
-		// };
 };
 
 # endif
